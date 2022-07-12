@@ -1,0 +1,82 @@
+/*Incorporando uma fonte ao CSS*/
+@font-face {
+    font-family: "Aire Exterior";
+    src: url("../fonts/AireExterior.ttf");
+}
+
+
+/*Neste ponto, estamos resetando as propriedades*/
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/*Decoração do header*/
+header {
+    width: 100%;
+    background-color: #2574a9;
+    position: fixed;
+
+}
+.container {
+    /*A largura máxima serve para que não fique distorcido em monitores muito grandes*/
+    max-width: 1200px;
+    height: 100px;
+    align-content: center;
+    margin: 0 auto;
+    display: grid; /*Alinha os textos horizontalmente*/
+    grid-template-areas: /*Cria áreas para o grid*/
+        "logo ... nav";
+    grid-template-columns: auto 1fr auto;  /*Define os tamanhos das áreas / fr é fração, o css pega o espaço restante e fraciona*/
+    padding: 0px 60px; /*Serve para não deixar os elementos colarem na div*/
+}
+.logo {
+    grid-area: logo;
+}
+.logo img {
+    width: 320px;
+}
+.nav-bar {
+    font-size: 21px;
+    grid-area: nav;
+    display: grid;
+    align-content: center;
+}
+.nav-bar a{
+    font-size: 1em;
+    font-family: "Aire Exterior";
+    color: #c5eff7;
+    text-transform: uppercase; /*Transformando todas as letras em maiúsculas*/
+}
+.nav-bar ul{
+    display: grid;
+    grid-auto-flow: column; /*Os itens surgem em linhas*/
+    gap: 20px;
+}
+main{
+    font-size: 20px;
+}
+section{
+    display: grid;
+    justify-content: center; /*Justificando o texto para centralizado*/
+    align-content: center; /*Centralizando o conteúdo verticalmente*/
+    font-family: "Aire Exterior";
+    font-size: 2em;
+    color: #2574a9;
+}
+section:nth-child(odd){
+    height: 100vh;
+    background-color: #cae1f1;
+}
+section:nth-child(even){
+    height: 100vh;
+    background-color: #b7d5eb;
+}
